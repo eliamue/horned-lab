@@ -105,14 +105,14 @@ const images = [
 },
 {
     url:
-    "https://cdn.modernfarmer.com/wp-content/uploads/2014/08/28476658_9c97f35096_o.jpg",
+    "https://www.torontozoo.com/img/1200/20190417020626044MouflonDSC1705.jpg",
     title: "Mouflon",
     description: "Those horns though",
     keyword: "mouflon",
     horns: 2
 },
 {
-    url: "https://cdn.modernfarmer.com/wp-content/uploads/2014/08/addax.jpg",
+    url: "https://www.marwell.org.uk/media/images/full/addax_(5).jpg",
     title: "Addax",
     description:
     "This guy is basically extinct but survives well in captivity, so they're frequently found in zoos",
@@ -129,9 +129,9 @@ const images = [
 },
 {
     url:
-    "https://cdn.modernfarmer.com/wp-content/uploads/2014/08/chameleon.jpg",
+    "https://i.pinimg.com/originals/e4/58/32/e458322a1cbf97f3dc9975038182aced.png",
     title: "Happy Jackson's Chameleon",
-    description: "These are really common in Hawaii",
+    description: "These are really common in Rapunzel's Tower",
     keyword: "chameleon",
     horns: 2
 },
@@ -147,7 +147,7 @@ const images = [
     url:
     "https://www.nps.gov/band/learn/nature/images/short-horned-lizard-open-mouth-18.jpg?maxwidth=650&autorotate=false",
     title: "Horned Lizard",
-    description: "Fave food: ants",
+    description: "I super believe in you, Tad Cooper",
     keyword: "lizard",
     horns: 100
 },
