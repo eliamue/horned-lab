@@ -2,6 +2,8 @@ import './index.css';
 import React, { Component } from 'react';
 import ImageItem from './ImageItem.js';
 import images from './data.js';
+import Dropdown from './Dropdown.js';
+
 
 export default class ImageList extends Component {
 
@@ -30,42 +32,28 @@ export default class ImageList extends Component {
             stabbyBois = images.filter(stabbyBois => stabbyBois.keyword === this.state.filteredKeywords)
         }
 
-        return (
+        const categoriesWithDuplicates = stabbyBois.map(stabbyBois => stabbyBois.horns)
+        const setOfCategories = new Set(categoriesWithDuplicates);
+
+        const hornsOptions = Array.from(setOfCategories);
+
+        const keywordOptions = Array.from(new Set(stabbyBois.map(stabbyBois => stabbyBois.keyword)));
+
+    return (
+
         <div>
-            <div className="dropdown">
-                <label>
-            How many horns do you want to see?
-                    <select onChange={this.handleHornsChange}>
-                        <option value=''>I want to gaze upon all these fine fellas</option>
-                        <option value='1'>One horn</option>
-                        <option value='2'>Two horns</option>
-                        <option value='3'>Three horns</option>
-                        <option value='100'>More than three horns</option>
-                    </select>
-                </label>
-            <br></br>
-                <label>
-                    Who do you want to party with?
-                    <select onChange={this.handleKeywordChange}>
-                        <option value=''>All these doods</option>
-                        <option value='rhino'>Rhino</option>
-                        <option value='narwhal'>Narwhal</option>
-                        <option value='unicorn'>Unicorn</option>
-                        <option value='unilego'>Unilego</option>
-                        <option value='triceratops'>Triceratops</option>
-                        <option value='markhor'>Markhor</option>
-                        <option value='mouflon'>Mouflon</option>
-                        <option value='addax'>Addax</option>
-                        <option value='chameleon'>Chameleon</option>
-                        <option value='lizard'>Lizard</option>
-                        <option value='dragon'>Dragon</option>
-                    </select>
-                </label>
-            </div>
+            <label>Filter by number of horns</label>
+                <Dropdown
+                    options={hornsOptions}
+                    handleChange={this.handleHornsChange} />
+                <br></br>
+            <label>Filter by species</label>
+                <Dropdown
+                    options={keywordOptions}
+                    handleChange={this.handleKeywordChange} />
 
             <section className="infodump">
-            {
-                stabbyBois.map((stabbyBois, i) => 
+                {stabbyBois.map((stabbyBois, i) => 
                     <ImageItem
                     url={stabbyBois.url}
                     title={stabbyBois.title}
@@ -73,11 +61,9 @@ export default class ImageList extends Component {
                     keyword={stabbyBois.keyword}
                     horns={stabbyBois.horns} 
                     key={i}
-                    />)
-            }
+                    />)}
             </section>
         </div>
-        
         )
     }
 }
