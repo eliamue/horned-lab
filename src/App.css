@@ -28,11 +28,22 @@
   color: #61dafb;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+img {
+  max-width: 500px;
+  max-height: 500px;
+}
+
+h1 {
+  font-size: 50px;
+}
+
+.dropdown {
+  display: flex;
+  flex-direction: column;
+  border: 20px solid transparent;
+}
+
+.infodump {
+  background-color: rgba(122, 233, 231, 0.548);
+  padding-top: 20px;
 }
